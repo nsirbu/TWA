@@ -1,4 +1,4 @@
-# TWA
+# WEB TECHNOLOGIES AND APPLICATIONS
 Repository used to publish the laboratory works for TWA course at UTM.
 
 ###### Laboratory work Nr. 1
