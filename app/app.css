@@ -1,0 +1,11 @@
+.menu {
+    list-style: none;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.menu > li {
+    display: inline;
+}
+

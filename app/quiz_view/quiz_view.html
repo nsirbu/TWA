@@ -1,0 +1,90 @@
+<div ng-controller="quiz_controller" ng-init="init()">
+
+    <div class="game-main-menu" ng-show="!isQuizStarted">
+        <button type="button" id="start_game" class="btn btn-success start-game-button" ng-click="startQuiz()">
+            Start the quiz
+        </button>
+    </div>
+
+    <div class="left-container">
+        <div class="level-indicator-container">
+            <p>Game levels:</p>
+            <ul class="level-indicator-list">
+                <li id="level_1">Level 1</li>
+                <li id="level_2">Level 2</li>
+                <li id="level_3">Level 3</li>
+                <li id="level_4">Level 4</li>
+                <li id="level_5">Level 5</li>
+                <li id="level_6">Level 6</li>
+                <li id="level_7">Level 7</li>
+                <li id="level_8">Level 8</li>
+                <li id="level_9">Level 9</li>
+                <li id="level_10">Level 10</li>
+            </ul>
+        </div>
+
+        <div class="game-options-container">
+            <p>Help options:</p>
+            <div class="game-options-buttons">
+                <button type="button" id="fifty_fifty" class="btn btn-info game-option"
+                        ng-click="useFiftyFiftyOption()" title="50/50">
+                    <i class="fas fa-percent"></i>
+                </button>
+                <button type="button" id="audience_help" class="btn btn-info game-option"
+                        ng-click="useAudienceHelpOption()" title="Ask the audience">
+                    <i class="fas fa-users"></i>
+                </button>
+                <button type="button" id="friend_help" class="btn btn-info game-option"
+                        ng-click="useFriendHelpOption()" title="Phone a friend">
+                    <i class="fas fa-phone"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="reset-game">
+            <button type="button" id="start_new_game" class="btn btn-danger" ng-click="startQuiz()">
+                Start over
+            </button>
+        </div>
+    </div>
+
+    <div class="center-container">
+        <div class="game-main-container">
+            <div class="question-container">
+                <span class="question">{{currentQuestion.questionTextValue}}</span> &nbsp;
+            </div>
+
+            <div class="answers-container">
+                <div class="left-answers-group">
+                    <button type="button" id="answer_1" class="btn btn-success answer-button"
+                            ng-click="validateAnswer(0)">
+                        A: {{currentQuestion.answers[0].answerTextValue}}
+                    </button>
+                    <button type="button" id="answer_2" class="btn btn-success answer-button"
+                            ng-click="validateAnswer(1)">
+                        B: {{currentQuestion.answers[1].answerTextValue}}
+                    </button>
+                </div>
+                <div class="right-answers-group">
+                    <button type="button" id="answer_3" class="btn btn-success answer-button"
+                            ng-click="validateAnswer(2)">
+                        C: {{currentQuestion.answers[2].answerTextValue}}
+                    </button>
+                    <button type="button" id="answer_4" class="btn btn-success answer-button"
+                            ng-click="validateAnswer(3)">
+                        D: {{currentQuestion.answers[3].answerTextValue}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown-container">
+            <p>Remaining time for this level</p>
+            <span id="remainingTimeForLevel"></span>
+        </div>
+    </div>
+
+    <div class="right-container">
+
+    </div>
+</div>
